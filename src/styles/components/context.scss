@@ -1,0 +1,21 @@
+.context{
+    background-color: $color-white;
+    border: 1.5px solid $color-black;
+    border-radius: 3px;
+    padding: 1rem 1rem;
+    &--menu{
+        width: 100%;
+        display: block;
+        text-align: left;
+        margin-top: 1rem;
+        padding:.5rem 1rem ;
+        font-size: 1.4rem;
+        color: $color-grey;
+        &:not(:last-child){
+            border-bottom: 1px solid $color-grey-dark-1;
+        }
+        &:hover{
+            background-color:$color-grey-dark-1 ;
+        }
+    }
+}

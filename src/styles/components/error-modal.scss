@@ -1,0 +1,39 @@
+.error-modal {
+    width: 40rem;
+    height: 38rem;
+    padding: 1rem 1rem;
+    text-align: center;
+    color:$color-grey;
+    position: relative;
+    &--icon {
+        display: block;
+        font-size: 9rem;
+        color: red;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+    &--code {
+        font-size: 2.5rem;
+        margin: 2rem 0rem;
+        font-weight: 600;
+    }
+    &--paragraph,
+    &--message {
+        font-size: 1.7rem;
+        margin: 2rem 0rem;
+    }
+    &--button{
+        width: 40rem;
+        height: 5rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $color-red-light;
+        font-size: 2rem;
+        color: $color-white;
+        font-weight: 600;
+        cursor: pointer;
+    }
+  
+
+}

@@ -1,0 +1,160 @@
+.idf-modal {
+    width: 120rem;
+    height: 60rem;
+    box-sizing: border-box;
+    @include respond (tab-land){
+        width: 100rem;
+    }
+    @include respond (tab-port){
+        width: 90rem;
+    }
+    &--no-project{
+        text-align: center;
+        font-size: 3rem;
+        color: $color-grey-dark-2;
+        display: block;
+        margin-top: 20rem;
+    }
+    &--header {
+        border: 1px solid transparent;
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding: .5rem 1rem;
+        border-bottom: 2px solid $color-grey-dark-2;
+        text-align: center;
+        font-size: 2.2rem;
+        height: 10%;
+    }
+
+    &--content {
+        display: flex;
+        height: 80%;
+        border-bottom: 2px solid $color-grey-dark-1;
+
+    }
+
+    &--project,
+    &--page {
+        flex: 1;
+        border-right: 2px solid $color-grey-dark-1;
+    }
+
+    &--idf {
+        flex: 1;
+
+        &__header {
+            font-size: 1.6rem;
+            font-weight: 500;
+            border-bottom: 1px solid $color-grey-dark-1;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        &__content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__old {
+            flex: 1;
+            border-bottom: 2px solid $color-grey-dark-1;
+            overflow: hidden;
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        &__new {
+            flex: 1;
+            font-size: 1.7rem;
+            &__name {
+                border-bottom: 1px solid $color-grey-dark-2;
+                text-align: center;
+            }
+
+            &__exp {
+                padding: 1rem;
+            }
+        }
+    }
+
+    &--ul__idf {
+        height: 100%;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__btns {
+        height: 6rem;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        &__save {
+            display: inline-block;
+            height: 4rem;
+            padding: 0rem 2rem;
+            font-size: 2rem;
+            border-bottom: 2px solid $color-blue-secondary;
+            margin-right: 2rem;
+            transition: all .2s;
+            border-radius: 2px;
+            &:hover {
+                background-color: $color-blue-secondary;
+                color: $color-white;
+            }
+        }
+        &__cancel {
+            display: inline-block;
+            height: 4rem;
+            padding: 0rem 2rem;
+            font-size: 2rem;
+            border-bottom: 2px solid $color-red-light;
+            transition: all .2s;
+            border-radius: 2px;
+            &:hover {
+                background-color: $color-red-light;
+                color: $color-white;
+            }
+        }
+
+    }
+}
+
+.idf {
+    &--card {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        margin-left: 1rem;
+        list-style: none;
+    }
+
+    &--idf-card {
+        list-style: none;
+    }
+
+    &--project-card,
+    &--page-card {
+        padding: .8rem 2rem;
+        border-bottom: 1px solid $color-grey-dark-1;
+        font-size: 2rem;
+        font-weight: 400;
+
+        &:hover {
+            background-color: $color-grey-light-2;
+        }
+
+        list-style: none;
+    }
+
+    &--page-card.selected,
+    &--project-card.selected {
+        background-color: $color-blue-light ;
+    }
+
+}

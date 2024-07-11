@@ -1,0 +1,14 @@
+.loading-main{
+    width: 20rem;
+    height: 20rem;   
+    background-image: radial-gradient($color-blue-primary, $color-blue-secondary) ;
+    position: absolute;
+    top:20%;
+    left:40%;
+    transform: translate(-30%, -40%);
+    border-radius:50%;
+    animation: bounce 2s infinite;
+}
+.loading-sub{
+    @include absCustom(50%, 50%);
+}

@@ -1,0 +1,46 @@
+.error{
+    &--main-title{
+        font-size: 12rem;
+        color: $color-red-light;
+    }
+    &--sub-title{
+        font-size: 5rem;
+    }
+    &--paragraph{
+        font-size: $xs-rem;
+        width: 70%;
+        margin: 0rem auto;
+        text-align: left;
+    }
+    &--button{
+        padding: 1rem 2rem;
+        padding-left:4rem ;
+        margin-top: 7rem;
+        border-radius: 3px;
+        border: 2px solid $color-blue-secondary;
+        font-size: 2rem;
+        transition: all .2s;
+        position: relative;
+        box-shadow: 0rem 1rem 1rem rgba($color-black, .1);
+        
+        &:hover{
+            transform: translateY(-3px);
+            box-shadow: 0rem 1rem 1rem rgba($color-black, .2);
+            color: $color-white;
+            background-color: $color-blue-secondary;
+        }
+    }
+    &--logo{
+        width: 3rem;
+        position: absolute;
+        top: 55%;
+        left: 5%;
+        transform: translate(-5%, -55%);
+    }
+    &--img{
+        width: 100%;
+        &:hover{
+            @include rotate;
+        }
+    }
+}

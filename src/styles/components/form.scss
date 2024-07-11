@@ -1,0 +1,12 @@
+.label{
+    background-color: $color-black;
+    &__invalid{
+        color: red;
+        font-weight: 400;
+    }
+
+    &__valid{
+        color: $color-grey-dark-2;
+        font-weight: 400;
+    }
+}

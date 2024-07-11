@@ -1,0 +1,137 @@
+.auth{
+    &-heading-container{
+        margin-bottom: 3rem;
+    }
+}
+
+.auth-modal{
+    width: 80rem;
+    height: 48rem;
+    background-image: linear-gradient(90deg, 
+    $color-white 0%, 
+    $color-white 70%, 
+    rgba($color-blue-primary, .96) 70%), 
+    url('../assets/logo/black-logo.png');
+}
+.auth-section{
+    width: 70%;
+    height: 100%;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.6rem;
+
+}
+.auth-section-sub{
+    background-image: none;
+    width: 30%;
+    height: 70%;
+    padding: 2rem;
+    font-size: 1.6rem;
+
+    position: absolute;
+    top: 10%;
+    right: 0;
+
+
+    &--content{
+        width: 100%;
+        position: relative;
+        top:20%;
+
+        &__heading{
+            display: block;
+            color: $color-white;
+        }
+        &__content{
+            display: inline-block;
+            text-align: center;
+            letter-spacing: .1rem;
+            color: $color-white;
+        }
+
+        &__btn{
+            margin-top: 3rem;
+            width: 100%;
+            border: 1px solid $color-white;
+            color: $color-blue-primary;
+            padding: .8rem .4rem;
+            &::after{
+                background-image: none;
+                background-color: $color-white;
+            }
+            &:hover{
+                color: $color-white;
+                border: 1px solid $color-white;
+                background-color:$color-blue-primary;
+            }
+        }
+    }
+   
+}
+
+.sign-in-form{
+    margin-top: 3rem;
+
+    &--loading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &--conflict{
+        color: $color-red-light;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    &--input{
+        display: inline-block;
+        padding:.5rem .8rem;
+        width: 100%;
+        height: 3rem;
+        border-radius: 3px;
+        border: none;
+        background-color: $color-grey-light-2;
+        border-bottom: 3px solid transparent;
+        &:focus{
+            outline: none;
+            border-bottom: 3px solid $color-blue-secondary;
+        }
+        &::-webkit-input-placeholder{
+            color: $color-grey-dark-2;
+        }
+    }
+    &--label{
+        padding:.5rem .8rem;
+        display: block;
+        transition: all .3s;
+    }
+    &--input:placeholder-shown + &--label {
+        visibility: hidden;
+        transform: translateY(-2rem);
+    }
+    &--btn{
+        &__submit{
+            margin-top: 1rem;
+            display: block;
+            width: 100%;
+            padding:.5rem .8rem;
+        }
+    }
+}
+.auth-logo-box{
+    position: absolute;
+    top:20%;
+    right:50%;
+    left: 50%;
+    width: 50%;
+    &--robot{
+        font-size: 10rem;
+    }
+    &--logo{
+        width: 100%;
+    }
+}
+

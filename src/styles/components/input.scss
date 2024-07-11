@@ -1,0 +1,7 @@
+.input-basic{
+    &:focus{
+        outline: 1px solid transparent;
+        border: 2px solid $color-blue-secondary;
+        border-radius: 2px;
+    }
+}

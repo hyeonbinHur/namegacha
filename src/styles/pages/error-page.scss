@@ -1,0 +1,30 @@
+.error-page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    
+    &--text-container {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 3;
+    }
+
+    &--img-container {
+        width: 120rem;
+        position: absolute;
+        top: 30%;
+        right: -20%;
+        transform: translate(10%, -50%);
+        z-index: 2;
+        @include respond (tab-port){
+            width: 80rem;
+        }
+        @include respond (tab-land){
+            width: 100rem;
+        }
+    }
+
+}
