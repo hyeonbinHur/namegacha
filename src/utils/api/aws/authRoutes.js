@@ -128,6 +128,7 @@ async function checkTokens() {
         } else {
             const refStatus = await refreshToken();
             if (refStatus.status === 200) {
+                console.log('re-issue access token');
                 return refStatus;
             } else if (refStatus.status === 401) {
                 return refStatus;

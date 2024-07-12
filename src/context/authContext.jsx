@@ -32,6 +32,7 @@ export const AuthContextProvider = ({ children }) => {
                     userId: userResponse.data.userId,
                     createdAt: userResponse.data.createdAt,
                 };
+                console.log(userObject);
                 dispatch({ type: 'SIGN-IN', payload: userObject });
             } else if (
                 authCheck.status === 401 &&
