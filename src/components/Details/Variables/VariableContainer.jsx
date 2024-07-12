@@ -23,7 +23,6 @@ export default function VariableContainer({ variables, pageId }) {
     const { mutate: mutateAddVariable, status: isAddVariableStatus } =
         useMutation({
             mutationFn: ({ variableName, variableExp, pageId }) => {
-                console.log(pageId);
                 return createVariable(pageId, variableName, variableExp);
             },
             onSuccess: () => {

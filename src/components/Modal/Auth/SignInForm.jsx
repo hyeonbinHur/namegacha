@@ -22,7 +22,6 @@ export default function SignInForm({ close }) {
             return await signInUser(userId, userPassword);
         },
         onSuccess: (responseData) => {
-            console.log(responseData);
             if (responseData.status === 200) {
                 dispatch({ type: 'SIGN-IN', payload: responseData.userObject });
                 setIsIdWrong(false);
@@ -57,7 +56,6 @@ export default function SignInForm({ close }) {
                 'Please complete all required fields before submitting.'
             );
         }
-        console.log('sign in ');
     };
 
     const emailIsValid =

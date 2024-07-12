@@ -19,8 +19,6 @@ export default function FunctionContextMenu({ item }) {
     const dispatch = useDispatch();
 
     const startRename = (e) => {
-        console.log(item.functionName);
-        console.log(item.functionId);
         e.preventDefault();
         e.stopPropagation();
         dispatch(editItSelf({ name: item.functionName, id: item.functionId }));

@@ -27,7 +27,6 @@ async function getPages() {
 async function createPage(projectId, pageName, pageExp) {
     //post
     try {
-        console.log('create page');
         const endPoint = `https://gh9sfgcnf7.execute-api.us-east-1.amazonaws.com/ng-apit-stage/namegacha/page`;
         const body = {
             pageName: pageName,

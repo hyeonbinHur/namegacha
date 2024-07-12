@@ -29,7 +29,6 @@ export default function ChatResult() {
         if (endOfMessagesRef.current) {
             endOfMessagesRef.current.scrollIntoView({ behavior: 'smooth' });
         }
-        console.log(messages);
     }, [messages]);
     return (
         <div className="chat--result--content">

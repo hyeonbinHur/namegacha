@@ -27,10 +27,6 @@ async function getFunctions() {
 async function createFunction(pageId, functionName, functionExp) {
     //post
     try {
-        console.log('Start create function');
-        console.log('page id : ' + pageId);
-        console.log('function name : ' + functionName);
-        console.log('finction exp : ' + functionExp);
         const endPoint = `https://gh9sfgcnf7.execute-api.us-east-1.amazonaws.com/ng-apit-stage/namegacha/function`;
         const body = {
             functionName: functionName,

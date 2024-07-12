@@ -8,7 +8,6 @@ function checkPendingStatus(array) {
 }
 
 function checkLength(string, max) {
-    console.log(string.length);
     if (string.length >= max) {
         return false;
     } else {

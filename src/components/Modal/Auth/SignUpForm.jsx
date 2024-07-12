@@ -20,7 +20,6 @@ export default function SignUpForm({ toSignIn }) {
             return signUpUser(userId, userPassword);
         },
         onSuccess: (response) => {
-            console.log(response);
             if (response.status === 409) {
                 setIsConflict(true);
             } else if (response.status === 200) {

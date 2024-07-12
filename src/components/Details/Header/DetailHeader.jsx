@@ -26,7 +26,6 @@ export default function DetailTest({ page }) {
     const { mutate: mutateUpdatePage, status: isUpdatePageStatus } =
         useMutation({
             mutationFn: ({ pageName, pageExp, pageId }) => {
-                console.log('Updating page...');
                 return pageAPI.updatePage(pageId, pageName, pageExp);
             },
             onSuccess: () => {

@@ -69,7 +69,6 @@ const IdentifierModal = forwardRef(function IdentifierModal({ user }, ref) {
         return {
             open: () => {
                 modal.current.showModal();
-                console.log('open');
             },
             close: () => {
                 dispatch(closeIedntifierModal());

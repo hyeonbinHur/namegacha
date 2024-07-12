@@ -12,10 +12,8 @@ const threadSlice = createSlice({
     reducers: {
         setThread(state, action) {
             if (state.globalThreadType === 'variable') {
-                console.log('variable thread set');
                 state.currentVariableThread = action.payload.newThread;
             } else {
-                console.log('function thread set');
                 state.currentFunctionthread = action.payload.newThread;
             }
         },
@@ -71,8 +69,7 @@ const threadSlice = createSlice({
             const arrayIndex = action.payload.arrayIndex;
             if (state.globalThreadType === 'variable') {
                 let newAiMeesage = [...state.variableMessages];
-                console.log(newAiMeesage[arrayIndex].Exp);
-                console.log(newAiMeesage[arrayIndex]);
+
                 newAiMeesage[arrayIndex].Exp = action.payload.newExp;
                 state.variableMessages = newAiMeesage;
             } else {

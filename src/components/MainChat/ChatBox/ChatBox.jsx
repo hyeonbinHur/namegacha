@@ -56,10 +56,8 @@ export default function ChatBox() {
     /**Reducer & Basic functions */
     const dispatch = useDispatch();
     const createSetThread = async () => {
-        console.log('create thread start');
         try {
             const response = await aiAPI.createThread();
-            console.log(response);
             setCurrentThread(response);
             dispatch(setThread({ newThread: response }));
             return true;
@@ -70,7 +68,6 @@ export default function ChatBox() {
     const sendMessage = async () => {
         try {
             const formattedMessageString = JSON.stringify(userMessageFormatted);
-            console.log(formattedMessageString);
             const sendMessageResponse = await aiAPI.sendMessage(
                 currentThread,
                 formattedMessageString
@@ -99,9 +96,7 @@ export default function ChatBox() {
 
     const readReply = async (runId) => {
         try {
-            console.log('read reply start');
             const status = await checkStatus(runId);
-            console.log('current status : ' + status);
             if (status === 'completed') {
                 const messages = await aiAPI.readMessages(currentThread);
                 dispatch(
@@ -129,7 +124,6 @@ export default function ChatBox() {
             setIsCreateNewThread(true);
         } else {
             const runId = await sendMessage();
-            console.log(runId);
             if (runId !== false) {
                 await readReply(runId);
                 setIsCreateNewThread(false);
@@ -144,7 +138,6 @@ export default function ChatBox() {
 
     const typeOnChange = (event) => {
         const value = event.target.value;
-        console.log(value);
         setSelectedType(value);
         setUserMessageFormatted((prevState) => ({
             ...prevState,

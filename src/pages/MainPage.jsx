@@ -29,7 +29,6 @@ export default function MainPage() {
         defaultOptions: {
             queries: {
                 onError: (error) => {
-                    console.log('global catch');
                     apiErrorHandler(error);
                 },
                 staleTime: 1000 * 60 * 15, // 5 minutes
@@ -38,7 +37,6 @@ export default function MainPage() {
             },
             mutations: {
                 onError: (error) => {
-                    console.log('global catch');
                     apiErrorHandler(error);
                 },
             },

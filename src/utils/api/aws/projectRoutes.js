@@ -38,8 +38,6 @@ async function getProjects() {
 async function createProject(projectName, uuid) {
     //post
     try {
-        console.log('project name :' + projectName);
-        console.log('uuid :' + uuid);
         const endPoint =
             'https://gh9sfgcnf7.execute-api.us-east-1.amazonaws.com/ng-apit-stage/namegacha/project';
         const body = {
@@ -47,7 +45,6 @@ async function createProject(projectName, uuid) {
             uuid: uuid,
         };
         const response = await axios.post(endPoint, body);
-        console.log('Create project done');
         return response;
     } catch (err) {
         console.error(err.message);

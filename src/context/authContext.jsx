@@ -37,7 +37,7 @@ export const AuthContextProvider = ({ children }) => {
                 authCheck.status === 401 &&
                 authCheck.message === 'Refresh token expired'
             ) {
-                console.log('로그인 만료');
+                console.log('token expired');
                 //ui update & toast
             }
         };

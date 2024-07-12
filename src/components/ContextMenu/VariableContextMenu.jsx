@@ -24,8 +24,6 @@ export default function VariableContextMenu({ item }) {
     };
 
     const startAddVariable = (e) => {
-        console.log('page name : ' + item.pageName);
-        console.log('page Id : ' + item.pageId_frk);
         dispatch(
             addChild({
                 addType: 'variable',

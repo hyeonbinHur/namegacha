@@ -41,7 +41,6 @@ async function signInUser(userId, userPassword) {
         try {
             const uuid = response.data.uuid;
             const userResponse = await getUserData(uuid);
-            console.log(userResponse);
             const userObject = {
                 uuid: uuid,
                 userId: userResponse.data.userId,
@@ -62,7 +61,6 @@ async function signInUser(userId, userPassword) {
 async function signOutUser() {
     //post
     try {
-        console.log('Start sign out');
         const body = {
             content: 'sign out',
         };
