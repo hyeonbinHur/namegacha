@@ -80,10 +80,13 @@ export default function MainPage() {
                                 path="/namegacha/detail/:pageId"
                                 element={<WrappedDetailPage />}
                             />
-                            <Route path="/error" element={<ErrorPage />} />
                             <Route
-                                path="*"
-                                element={<Navigate to="/error" />}
+                                path="/namegacha/error"
+                                element={<ErrorPage />}
+                            />
+                            <Route
+                                path="/namegacha/*"
+                                element={<Navigate to="/namegacha/error" />}
                             />
                         </Routes>
                     </ErrorBoundary>

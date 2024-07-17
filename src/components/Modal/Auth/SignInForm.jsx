@@ -4,7 +4,7 @@ import { useMutation } from '@tanstack/react-query';
 import { signInUser } from '../../../utils/api/aws/authRoutes';
 import { useState } from 'react';
 import * as authUtil from '../../../utils/util/authUtil';
-import { useAuthContext } from '../../../hooks/useAuth';
+import { useAuthContext } from '../../../hooks/useAuthContext';
 import Spinner from '../../../assets/svgs/loading.svg';
 import { checkPendingStatus } from '../../../utils/util/util';
 import { toast } from 'react-toastify';

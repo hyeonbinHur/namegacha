@@ -26,7 +26,6 @@ const contextMenuSlice = createSlice({
             state.y = action.payload.y;
         },
         closeContextMenu(state) {
-            console.log('close');
             state.target.name = null;
             state.target.id = null;
             state.isOpen = false;
@@ -38,7 +37,6 @@ const contextMenuSlice = createSlice({
         },
 
         clearContextMenu(state) {
-            console.log('close');
             state.target.name = null;
             state.target.id = null;
             state.isOpen = false;
@@ -57,7 +55,6 @@ const contextMenuSlice = createSlice({
             state.isOpen = false;
         },
         editItSelf(state, action) {
-            console.log('edit start');
             state.target.name = action.payload.name;
             state.target.id = action.payload.id;
             state.isEdit = true;
