@@ -6,8 +6,6 @@ const createThread = async () => {
             'https://gh9sfgcnf7.execute-api.us-east-1.amazonaws.com/ng-apit-stage/namegacha/ai?content=thread'
         );
         const responseThreadId = response.data;
-        // setThread(resposeThreadId);
-        // console.log(resposeThreadId);
         return responseThreadId;
     } catch (err) {
         console.error(err);

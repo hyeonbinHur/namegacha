@@ -75,6 +75,3 @@ export {
     checkLoginStatus,
     getUserData,
 };
-
-//http://localhost:8080/namegacha/api/sign-up
-//http://localhost:8080/namegacha/api/sign-in
