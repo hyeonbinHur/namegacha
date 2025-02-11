@@ -14,56 +14,51 @@ const initialState = {
 };
 
 const contextMenuSlice = createSlice({
-    name: 'currentContextMenu',
-    initialState: initialState,
-    reducers: {
-        openContextMenu(state, action) {
-            state.target.name = action.payload.name;
-            state.target.id = action.payload.id;
-            state.isOpen = true;
+  name: "currentContextMenu",
+  initialState: initialState,
+  reducers: {
+    openContextMenu(state, action) {
+      state.target.name = action.payload.name;
+      state.target.id = action.payload.id;
+      state.isOpen = true;
 
-            state.x = action.payload.x;
-            state.y = action.payload.y;
-        },
-        closeContextMenu(state) {
-            state.target.name = null;
-            state.target.id = null;
-            state.isOpen = false;
-            state.isAdd = false;
-            state.addType = null;
-            state.isEdit = false;
-            state.x = null;
-            state.y = null;
-        },
-
-        clearContextMenu(state) {
-            state.target.name = null;
-            state.target.id = null;
-            state.isOpen = false;
-            state.isAdd = false;
-            state.addType = null;
-            state.isEdit = false;
-            state.x = null;
-            state.y = null;
-        },
-
-        addChild(state, action) {
-            state.target.name = action.payload.name;
-            state.target.id = action.payload.id;
-            state.isAdd = true;
-            state.addType = action.payload.addType;
-            state.isOpen = false;
-        },
-        editItSelf(state, action) {
-            state.target.name = action.payload.name;
-            state.target.id = action.payload.id;
-            state.isEdit = true;
-            state.isOpen = false;
-        },
-        // deleteItSelf(){
-
-        // }
+      state.x = action.payload.x;
+      state.y = action.payload.y;
     },
+    closeContextMenu(state) {
+      state.target.name = null;
+      state.target.id = null;
+      state.isOpen = false;
+      state.isAdd = false;
+      state.addType = null;
+      state.isEdit = false;
+      state.x = null;
+      state.y = null;
+    },
+    clearContextMenu(state) {
+      state.target.name = null;
+      state.target.id = null;
+      state.isOpen = false;
+      state.isAdd = false;
+      state.addType = null;
+      state.isEdit = false;
+      state.x = null;
+      state.y = null;
+    },
+    addChild(state, action) {
+      state.target.name = action.payload.name;
+      state.target.id = action.payload.id;
+      state.isAdd = true;
+      state.addType = action.payload.addType;
+      state.isOpen = false;
+    },
+    editItSelf(state, action) {
+      state.target.name = action.payload.name;
+      state.target.id = action.payload.id;
+      state.isEdit = true;
+      state.isOpen = false;
+    },
+  },
 });
 
 export const {

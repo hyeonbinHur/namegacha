@@ -55,33 +55,36 @@ export default function ChatBox() {
     }, [globalThreadType]);
     /**Reducer & Basic functions */
     const dispatch = useDispatch();
+    
     const createSetThread = async () => {
-        try {
-            const response = await aiAPI.createThread();
-            setCurrentThread(response);
-            dispatch(setThread({ newThread: response }));
-            return true;
-        } catch (err) {
-            return false;
-        }
+      try {
+        const response = await aiAPI.createThread();
+        setCurrentThread(response);
+        dispatch(setThread({ newThread: response }));
+        return true;
+      } catch (err) {
+        return false;
+      }
     };
+
     const sendMessage = async () => {
-        try {
-            const formattedMessageString = JSON.stringify(userMessageFormatted);
-            const sendMessageResponse = await aiAPI.sendMessage(
-                currentThread,
-                formattedMessageString
-            );
-            dispatch(
-                pushUserMessages({
-                    message: userMessageFormatted.definition,
-                })
-            );
-            return sendMessageResponse;
-        } catch (err) {
-            return false;
-        }
+      try {
+        const formattedMessageString = JSON.stringify(userMessageFormatted);
+        const sendMessageResponse = await aiAPI.sendMessage(
+          currentThread,
+          formattedMessageString
+        );
+        dispatch(
+          pushUserMessages({
+            message: userMessageFormatted.definition,
+          })
+        );
+        return sendMessageResponse;
+      } catch (err) {
+        return false;
+      }
     };
+
     const checkStatus = async (runId) => {
         try {
             const responseStatus = await aiAPI.checkStatus(

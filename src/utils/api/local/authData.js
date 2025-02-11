@@ -58,15 +58,14 @@ async function checkLoginStatus() {
     }
 }
 async function getUserData(uuid) {
-    const endPoint = `http://localhost:8080/namegacha/api/user/${uuid}`;
-    try {
-        const response = await axios.get(endPoint);
-        return response.data;
-    } catch (err) {
-        console.error(err);
-    }
+  const endPoint = `http://localhost:8080/namegacha/api/user/${uuid}`;
+  try {
+    const response = await axios.get(endPoint);
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
 }
-
 export {
     createUser,
     signInUser,

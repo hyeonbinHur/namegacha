@@ -15,17 +15,16 @@ const ErrorModal = forwardRef(function ErrorModal(props, ref) {
     );
     const dispatch = useDispatch();
     useImperativeHandle(ref, () => {
-        return {
-            open: () => {
-                modal.current.showModal();
-            },
-            close: () => {
-                dispatch(clearError());
-                modal.current.close();
-            },
-        };
+      return {
+        open: () => {
+          modal.current.showModal();
+        },
+        close: () => {
+          dispatch(clearError());
+          modal.current.close();
+        },
+      };
     });
-
     return createPortal(
         <div>
             <dialog ref={modal} className="modal error-modal">
