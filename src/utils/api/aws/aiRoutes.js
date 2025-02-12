@@ -41,17 +41,19 @@ const sendMessage = async (threadId, message) => {
         throw err;
     }
 };
+
 const checkStatus = async (threadId, runId) => {
-    try {
-        const endPoint = `https://gh9sfgcnf7.execute-api.us-east-1.amazonaws.com/ng-apit-stage/namegacha/ai?content=status&threadId=${threadId}&runId=${runId}`;
-        const response = await axios.get(endPoint);
-        const status = response.data;
-        return status;
-    } catch (err) {
-        console.error(err.message);
-        throw err;
-    }
+  try {
+    const endPoint = `https://gh9sfgcnf7.execute-api.us-east-1.amazonaws.com/ng-apit-stage/namegacha/ai?content=status&threadId=${threadId}&runId=${runId}`;
+    const response = await axios.get(endPoint);
+    const status = response.data;
+    return status;
+  } catch (err) {
+    console.error(err.message);
+    throw err;
+  }
 };
+
 const readReply = async (threadId) => {
     try {
         const endPoint = `https://gh9sfgcnf7.execute-api.us-east-1.amazonaws.com/ng-apit-stage/namegacha/ai?content=reply&threadId=${threadId}`;

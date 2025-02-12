@@ -1,4 +1,5 @@
 import { axiosInstance } from "./axiosInstance";
+
 const buildResponse = (status, userObject, message) => {
   return {
     status: status,
@@ -18,6 +19,7 @@ const signUpUser = async (userId, userPassword) => {
     throw new Error(err.message);
   }
 };
+
 const signInUser = async (userId, userPassword) => {
   //post
   try {
@@ -51,10 +53,10 @@ const signOutUser = async () => {
     throw new Error(err.message);
   }
 };
+
 const accessToken = async () => {
   //post
   try {
-    console.log("here");
     const response = await axiosInstance.post(
       "auth/access-token",
       {},

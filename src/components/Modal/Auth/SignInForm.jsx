@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import { useMutation } from '@tanstack/react-query';
-import { signInUser, accessToken } from "../../../utils/api/axios/authApi";
+import { signInUser } from "../../../utils/api/axios/authApi";
 
 import { useState } from "react";
 import { useAuthContext } from "../../../hooks/useAuthContext";
@@ -122,9 +122,7 @@ export default function SignInForm({ close }) {
                 Password
               </label>
             )}
-            <button type="button" onClick={() => accessToken()}>
-              token test
-            </button>
+
             <button
               className="sign-in-form--btn__submit btn-round"
               type="button"

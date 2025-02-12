@@ -1,6 +1,7 @@
 import ChatBox from './ChatBox/ChatBox';
 import ChatResult from './ChatResult/ChatResult';
 import IdentifierModal from '../Modal/IdentifierModal';
+
 import { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useAuthContext } from '../../hooks/useAuthContext';

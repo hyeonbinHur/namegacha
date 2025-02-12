@@ -2,9 +2,7 @@
 import { createContext, useEffect, useReducer } from 'react';
 // import * as auth from '../utils/api/local/authData.js';
 import * as authAPI from "../utils/api/axios/authApi";
-
 export const UserContext = createContext();
-
 // eslint-disable-next-line react-refresh/only-export-components
 export const authReducer = (state, action) => {
   switch (action.type) {
@@ -16,7 +14,6 @@ export const authReducer = (state, action) => {
       return state;
   }
 };
-
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     user: null,
@@ -29,7 +26,7 @@ export const AuthContextProvider = ({ children }) => {
         const userResponse = await authAPI.getUser(uuid);
         const userObject = {
           uuid: uuid,
-          userId: userResponse.data.userId,
+          userId: userResponse.User_ID,
         };
         dispatch({ type: "SIGN-IN", payload: userObject });
       } else if (
@@ -37,7 +34,6 @@ export const AuthContextProvider = ({ children }) => {
         authCheck.message === "Refresh token expired"
       ) {
         console.log("token expired");
-        //ui update & toast
       }
     };
     checkAuthStatus();
