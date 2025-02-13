@@ -14,6 +14,7 @@ const createProject = async (projectName, uuid) => {
       projectName,
       uuid,
     };
+    console.log(newProject);
     const response = await axiosInstance.post("project", newProject);
     return response;
   } catch (err) {

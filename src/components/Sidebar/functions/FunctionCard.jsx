@@ -8,7 +8,7 @@ import {
 } from '../../../store/contextMenuSlice';
 import * as contextUtils from '../../../utils/util/contextUtils';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import * as functionAPI from '../../../utils/api/aws/functionRoutes';
+import * as functionAPI from "../../../utils/api/axios/functionApi";
 import ContextMenu from '../../ContextMenu/ContextMenu';
 import { checkLength } from '../../../utils/util/util.js';
 import { isNotEmpty } from '../../../utils/util/authUtil.js';

@@ -14,8 +14,7 @@ import {
 } from '../../../store/contextMenuSlice';
 import * as contextUtil from '../../../utils/util/contextUtils.js';
 import ContextMenu from '../../ContextMenu/ContextMenu.jsx';
-import * as pageAPI from '../../../utils/api/aws/pageRoutes.js';
-// import * as variableAPI from '../../../utils/api/aws/variableRoutes.js';
+import * as pageAPI from "../../../utils/api/axios/pageApi";
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { checkLength } from '../../../utils/util/util.js';

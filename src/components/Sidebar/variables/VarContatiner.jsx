@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
-import { BiDotsVerticalRounded } from 'react-icons/bi';
-import VarCard from './VarCard.jsx';
+import { BiDotsVerticalRounded } from "react-icons/bi";
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import * as varAPI from '../../../utils/api/aws/variableRoutes.js';
-import { useState } from 'react';
-import { checkLength } from '../../../utils/util/util.js';
-import { isNotEmpty } from '../../../utils/util/authUtil.js';
-import { toast } from 'react-toastify';
-import { closeContextMenu } from '../../../store/contextMenuSlice';
-import { useDispatch } from 'react-redux';
+import * as varAPI from "../../../utils/api/axios/variableApi.js";
+import { useState } from "react";
+import { checkLength } from "../../../utils/util/util.js";
+import { isNotEmpty } from "../../../utils/util/authUtil.js";
+import { toast } from "react-toastify";
+import { closeContextMenu } from "../../../store/contextMenuSlice";
+import { useDispatch } from "react-redux";
+
+import VarCard from "./VarCard.jsx";
+
+
 
 export default function VarContainer({
     variables,

@@ -1,8 +1,15 @@
 /* eslint-disable react/prop-types */
-import ProjectContextMenu from './ProjectContextMenu';
-import PageContextMenu from './PageContextMenu';
-import FunctionContextMenu from './FunctionContextMenu';
-import VariableContextMenu from './VariableContextMenu';
+
+import { lazy } from "react";
+// import ProjectContextMenu from "./ProjectContextMenu";
+// import PageContextMenu from "./PageContextMenu";
+// import FunctionContextMenu from "./FunctionContextMenu";
+// import VariableContextMenu from "./VariableContextMenu";
+const ProjectContextMenu = lazy(() => import("./ProjectContextMenu"));
+const PageContextMenu = lazy(() => import("./PageContextMenu"));
+const FunctionContextMenu = lazy(() => import("./FunctionContextMenu"));
+const VariableContextMenu = lazy(() => import("./VariableContextMenu"));
+
 import { useSelector } from 'react-redux';
 
 export default function ContextMenu({ type, item }) {

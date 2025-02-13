@@ -38,9 +38,11 @@ const updatePage = async (pageId, pageName, pageExp) => {
 
 const deletePage = async (pageId) => {
   try {
+    console.log(pageId);
     const response = await axiosInstance.delete(`page/${pageId}`);
     return response.data;
   } catch (err) {
+    console.log(err.message);
     throw new Error(err.message);
   }
 };

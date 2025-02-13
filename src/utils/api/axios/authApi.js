@@ -92,6 +92,7 @@ const checkTokens = async () => {
     // const refreshTokenResponse = await refreshToken();
     return accessTokenResponse;
   } catch (err) {
+    return err;
     throw new Error(err.message);
   }
 };

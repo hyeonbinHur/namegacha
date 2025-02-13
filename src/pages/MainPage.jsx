@@ -1,18 +1,27 @@
-import SideBar from '../components/Sidebar/SideBar';
-import MainChat from '../components/MainChat/MainChat';
-import { useDispatch, useSelector } from 'react-redux';
-import { closeContextMenu } from '../store/contextMenuSlice';
-import DetailPage from './DetailPage';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import ErrorModal from '../components/Modal/ErrorModal';
-import { useEffect, useRef } from 'react';
-import { setError } from '../store/errorSlice';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
-import ErrorPage from './ErrorPage';
-import { ErrorBoundary } from 'react-error-boundary';
-import Logo from '../assets/sLogo/logo-blue.png';
+import { useDispatch, useSelector } from "react-redux";
+import { closeContextMenu } from "../store/contextMenuSlice";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useEffect, useRef } from "react";
+import { setError } from "../store/errorSlice";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import { ErrorBoundary } from "react-error-boundary";
+import Logo from "../assets/sLogo/logo-blue.png";
+import { Suspense, lazy } from "react";
+import Spinner from "../assets/svgs/loading.svg";
+
+// import ErrorModal from "../components/Modal/ErrorModal";
+// import DetailPage from "./DetailPage";
+// import SideBar from "../components/Sidebar/SideBar";
+// import MainChat from "../components/MainChat/MainChat";
+// import ErrorPage from "./ErrorPage";
+
+const ErrorPage = lazy(() => import("./ErrorPage"));
+const ErrorModal = lazy(() => import("../components/Modal/ErrorModal"));
+const SideBar = lazy(() => import("../components/Sidebar/SideBar"));
+const MainChat = lazy(() => import("../components/MainChat/MainChat"));
+const DetailPage = lazy(() => import("./DetailPage"));
 
 export default function MainPage() {
   const errorModal = useRef(null);
@@ -47,7 +56,7 @@ export default function MainPage() {
   };
   // UseEffect to open/close modal based on error state
   useEffect(() => {
-    if (sliceIsError) {
+    if (sliceIsError && errorModal.current !== null) {
       errorModal.current.open();
     } else {
       errorModal.current.close();
@@ -62,23 +71,31 @@ export default function MainPage() {
           <img src={Logo} className="main__logo" />
         </label>
         <aside className="main--sidebar">
-          <SideBar />
+          <Suspense
+            fallback={<img src={Spinner} className="chat--box__loading" />}
+          >
+            <SideBar />
+          </Suspense>
         </aside>
         <section className="main--main">
-          <ErrorBoundary FallbackComponent={ErrorPage}>
-            <Routes>
-              <Route path="/namegacha/" element={<WrappedMainChat />} />
-              <Route
-                path="/namegacha/detail/:pageId"
-                element={<WrappedDetailPage />}
-              />
-              <Route path="/namegacha/error" element={<ErrorPage />} />
-              <Route
-                path="/namegacha/*"
-                element={<Navigate to="/namegacha/error" />}
-              />
-            </Routes>
-          </ErrorBoundary>
+          <Suspense
+            fallback={<img src={Spinner} className="chat--box__loading" />}
+          >
+            <ErrorBoundary FallbackComponent={ErrorPage}>
+              <Routes>
+                <Route path="/namegacha/" element={<WrappedMainChat />} />
+                <Route
+                  path="/namegacha/detail/:pageId"
+                  element={<WrappedDetailPage />}
+                />
+                <Route path="/namegacha/error" element={<ErrorPage />} />
+                <Route
+                  path="/namegacha/*"
+                  element={<Navigate to="/namegacha/error" />}
+                />
+              </Routes>
+            </ErrorBoundary>
+          </Suspense>
         </section>
       </main>
       <ErrorModal ref={errorModal} />
@@ -88,17 +105,17 @@ export default function MainPage() {
 }
 
 function WrappedMainChat() {
-    return (
-        <div className="mainChat">
-            <MainChat />
-        </div>
-    );
+  return (
+    <div className="mainChat">
+      <MainChat />
+    </div>
+  );
 }
 
 function WrappedDetailPage() {
-    return (
-        <div className="mainChat">
-            <DetailPage />
-        </div>
-    );
+  return (
+    <div className="mainChat">
+      <DetailPage />
+    </div>
+  );
 }

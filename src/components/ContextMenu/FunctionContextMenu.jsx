@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useDispatch } from 'react-redux';
 import { addChild, editItSelf } from '../../store/contextMenuSlice';
-import * as functionAPI from '../../utils/api/aws/functionRoutes';
+import * as functionAPI from "../../utils/api/axios/functionApi";
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 export default function FunctionContextMenu({ item }) {

@@ -36,4 +36,11 @@ const deleteFunction = async (functionId) => {
     throw new Error(err.message);
   }
 };
-export { createFunction, updateFunction, deleteFunction };
+
+const deleteFunctionsInPage = () => {};
+export {
+  createFunction,
+  updateFunction,
+  deleteFunction,
+  deleteFunctionsInPage,
+};

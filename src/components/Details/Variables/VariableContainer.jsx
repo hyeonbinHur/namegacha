@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import VariableCard from './VariableCard';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { createVariable } from '../../../utils/api/aws/variableRoutes';
+import { createVariable } from "../../../utils/api/axios/variableApi";
 import { useDispatch } from 'react-redux';
 import * as detailReducers from '../../../store/detailPageSlice';
 import DetailForm from '../Common/DetailForm';

@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 
-// import * as fnAPI from '../../../utils/api/aws/functionRoutes';
-import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import FunctionCard from './FunctionCard';
-import * as functionAPI from '../../../utils/api/aws/functionRoutes.js';
+import { BiDotsVerticalRounded } from "react-icons/bi";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import FunctionCard from "./FunctionCard";
+import * as functionAPI from "../../../utils/api/axios/functionApi";
 import { checkLength } from '../../../utils/util/util.js';
 import { isNotEmpty } from '../../../utils/util/authUtil.js';
 import { toast } from 'react-toastify';

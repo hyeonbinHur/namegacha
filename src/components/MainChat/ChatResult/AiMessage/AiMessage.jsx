@@ -3,6 +3,10 @@ import ExpCard from './ExpCard';
 import NameCard from './NameCard';
 import { useDispatch } from 'react-redux';
 import { openIdentifierModal } from '../../../../store/identifiyerModal';
+// import { lazy, Suspense } from "react";
+
+// const ExpCard = lazy(() => import("./ExpCard"));
+// const NameCard = lazy(() => import("./NameCard"));
 
 export default function AiMessage({ message, arrayIndex }) {
     const name = message.Names;

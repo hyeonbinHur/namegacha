@@ -1,13 +1,27 @@
 import { BsChatSquareDotsFill } from 'react-icons/bs';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import * as pageAPI from '../utils/api/aws/pageRoutes';
-import DetailHeader from '../components/Details/Header/DetailHeader';
-import VariableContainer from '../components/Details/Variables/VariableContainer';
-import FunctionContainer from '../components/Details/Functions/FunctionContainer';
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import loading from '../assets/svgs/loading.svg';
+import * as pageAPI from "../utils/api/axios/pageApi";
+
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import loading from "../assets/svgs/loading.svg";
+import { lazy } from "react";
+
+const DetailHeader = lazy(
+  () => import("../components/Details/Header/DetailHeader")
+);
+const VariableContainer = lazy(
+  () => import("../components/Details/Variables/VariableContainer")
+);
+const FunctionContainer = lazy(
+  () => import("../components/Details/Functions/FunctionContainer")
+);
+
+// import DetailHeader from "../components/Details/Header/DetailHeader";
+// import VariableContainer from "../components/Details/Variables/VariableContainer";
+// import FunctionContainer from "../components/Details/Functions/FunctionContainer";
+
 
 export default function DetailPage() {
     const params = useParams();

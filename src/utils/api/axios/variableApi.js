@@ -1,6 +1,6 @@
 import { axiosInstance } from "./axiosInstance";
 
-const createVariable = async (variableName, variableExp, pageId) => {
+const createVariable = async (pageId, variableName, variableExp) => {
   try {
     const newVariable = {
       variableName,
@@ -32,11 +32,17 @@ const updateVariable = async (variableId, variableName, variableExp) => {
 
 const deleteVariable = async (variableId) => {
   try {
-    const response = await axiosInstance.delete(`varaibl/${variableId}`);
+    const response = await axiosInstance.delete(`variable/${variableId}`);
     return response.data;
   } catch (err) {
     throw new Error(err.message);
   }
 };
 
-export { createVariable, updateVariable, deleteVariable };
+const deleteVariablesInPage = () => {};
+export {
+  createVariable,
+  updateVariable,
+  deleteVariable,
+  deleteVariablesInPage,
+};

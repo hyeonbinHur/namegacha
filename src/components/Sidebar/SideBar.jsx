@@ -1,16 +1,21 @@
-import { GoSignOut } from 'react-icons/go';
-import ProjectCard from './projects/ProjectCard.jsx';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { GoSignOut } from "react-icons/go";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getProjectByUUID } from "../../utils/api/axios/projectApi.js";
 import { useAuthContext } from "../../hooks/useAuthContext.js";
 import { AiFillFolder } from "react-icons/ai";
-import AuthModal from "../Modal/Auth/AuthModal.jsx";
-import * as projectAPI from "../../utils/api/aws/projectRoutes.js";
+import * as projectAPI from "../../utils/api/axios/projectApi.js";
 import { useRef, useState } from "react";
 import { useSignOut } from "../../hooks/useSignOut.js";
 import { toast } from "react-toastify";
 import { checkLength } from "../../utils/util/util.js";
 import { isNotEmpty } from "../../utils/util/authUtil.js";
+import { lazy, Suspense } from "react";
+
+const ProjectCard = lazy(() => import("./projects/ProjectCard.jsx"));
+const AuthModal = lazy(() => import("../Modal/Auth/AuthModal.jsx"));
+
+// import ProjectCard from "./projects/ProjectCard.jsx";
+// import AuthModal from "../Modal/Auth/AuthModal.jsx";
 import logo from "../../assets/sLogo/logo-blue.png";
 import Spinner from "../../assets/svgs/loading.svg";
 
@@ -152,8 +157,9 @@ export default function Header() {
           />
         </div>
       )}
-
-      <AuthModal ref={authModal} />
+      <Suspense fallback={<img src={Spinner} className="chat--box__loading" />}>
+        <AuthModal ref={authModal} />
+      </Suspense>
     </main>
   );
 }

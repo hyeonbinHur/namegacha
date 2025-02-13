@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import * as pageAPI from '../../../utils/api/aws/pageRoutes';
-import { deleteVariablesInPage } from '../../../utils/api/aws/variableRoutes';
-import { deleteFunctionsInPage } from '../../../utils/api/aws/functionRoutes';
+import * as pageAPI from "../../../utils/api/axios/pageApi";
+
+import { deleteVariablesInPage } from "../../../utils/api/axios/variableApi";
+import { deleteFunctionsInPage } from "../../../utils/api/axios/functionApi";
+
 import * as detailReducers from '../../../store/detailPageSlice';
 import { useDispatch } from 'react-redux';
 import DetailForm from '../Common/DetailForm';

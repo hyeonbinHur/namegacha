@@ -1,17 +1,21 @@
 /* eslint-disable react/prop-types */
-import * as varAPI from '../../../utils/api/aws/variableRoutes.js';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
-import * as contextUtil from '../../../utils/util/contextUtils.js';
+import * as varAPI from "../../../utils/api/axios/variableApi";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import * as contextUtil from "../../../utils/util/contextUtils.js";
 import {
-    openContextMenu,
-    closeContextMenu,
-} from '../../../store/contextMenuSlice.js';
-import ContextMenu from '../../ContextMenu/ContextMenu.jsx';
-import { checkLength } from '../../../utils/util/util.js';
-import { isNotEmpty } from '../../../utils/util/authUtil.js';
-import { toast } from 'react-toastify';
+  openContextMenu,
+  closeContextMenu,
+} from "../../../store/contextMenuSlice.js";
+import { checkLength } from "../../../utils/util/util.js";
+import { isNotEmpty } from "../../../utils/util/authUtil.js";
+import { toast } from "react-toastify";
+
+import ContextMenu from "../../ContextMenu/ContextMenu.jsx";
+// const ContextMenu = lazy(() => import("../../ContextMenu/ContextMenu.jsx"));
+
+
 export default function VarCard({ variable, page }) {
     const [newVariableName, setNewVariableName] = useState(
         variable.variableName

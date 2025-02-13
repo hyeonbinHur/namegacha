@@ -31,6 +31,8 @@
 }
 
 @mixin rotate {
+    animation: rotate 10s infinite;
+
     @keyframes rotate {
         0% {
             transform: translate(0, 0) rotate(0deg);
@@ -53,7 +55,6 @@
         }
     }
 
-    animation: rotate 10s infinite;
 }
 
 @mixin respond($breakpoint) {

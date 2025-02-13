@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useDispatch } from 'react-redux';
 import { addChild, editItSelf } from '../../store/contextMenuSlice';
-import * as variableAPI from '../../utils/api/aws/variableRoutes';
+import * as variableAPI from "../../utils/api/axios/variableApi";
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 export default function VariableContextMenu({ item }) {

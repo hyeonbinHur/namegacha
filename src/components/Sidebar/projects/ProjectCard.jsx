@@ -7,8 +7,8 @@ import PageCard from '../pages/PageCard.jsx';
 // import './projectCard.css';
 import { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import * as PageAPI from '../../../utils/api/aws/pageRoutes.js';
-import * as projectAPI from '../../../utils/api/aws/projectRoutes.js';
+import * as PageAPI from "../../../utils/api/axios/pageApi.js";
+import * as projectAPI from "../../../utils/api/axios/projectApi.js";
 import { useSelector, useDispatch } from 'react-redux';
 import {
     openContextMenu,

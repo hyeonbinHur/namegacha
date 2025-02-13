@@ -3,8 +3,8 @@ import { forwardRef, useImperativeHandle, useState, useRef } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { getProjectByUUID } from "../../utils/api/axios/projectApi";
-import { createVariable } from "../../utils/api/aws/variableRoutes";
-import { createFunction } from "../../utils/api/aws/functionRoutes";
+import { createVariable } from "../../utils/api/axios/variableApi";
+import { createFunction } from "../../utils/api/axios/functionApi";
 
 import { createPortal } from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
